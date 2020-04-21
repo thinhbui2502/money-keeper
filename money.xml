@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<money>
+    <money>
+        <id>3</id>
+        <date>123</date>
+        <moneyName>123</moneyName>
+        <amount>123</amount>
+        <description>dfwf</description>
+    </money>
+    <money>
+        <id>2</id>
+        <date>20/04/2020</date>
+        <moneyName>Chi</moneyName>
+        <amount>20000</amount>
+        <description>adasda</description>
+    </money>
+    <money>
+        <id>2</id>
+        <date>22/4</date>
+        <moneyName>Thu</moneyName>
+        <amount>1000000</amount>
+        <description>Doi no thue</description>
+    </money>
+    <money>
+        <id>4</id>
+        <date>25/4</date>
+        <moneyName>chi</moneyName>
+        <amount>19585200</amount>
+        <description>adasd</description>
+    </money>
+    <money>
+        <id>5</id>
+        <date>23</date>
+        <moneyName>thu</moneyName>
+        <amount>123123</amount>
+        <description>12312312</description>
+    </money>
+</money>
