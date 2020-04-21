@@ -9,7 +9,6 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.List;
 import java.util.Locale;
@@ -172,7 +171,6 @@ public class MoneyView extends JFrame implements ActionListener, ListSelectionLi
     }
 
     //Hiển thị list money vào bảng moneyTable
-
     public void showListMoney(List<Money> list) {
         int size = list.size();
         Object[][] money = new Object[size][5];
@@ -180,11 +178,10 @@ public class MoneyView extends JFrame implements ActionListener, ListSelectionLi
             money[i][0] = list.get(i).getId();
             money[i][1] = list.get(i).getDate();
             money[i][2] = list.get(i).getMoneyName();
-
             //Định dạng số sang  tiền tệ
             Locale locale = new Locale("vi","VN" );
             NumberFormat format = NumberFormat.getInstance(locale);
-            money[i][3] = format.format(list.get(i).getAmount()) + " đ";
+            money[i][3] = format.format(list.get(i).getAmount());
 
             money[i][4] = list.get(i).getDescription();
         }
@@ -239,9 +236,12 @@ public class MoneyView extends JFrame implements ActionListener, ListSelectionLi
 
     //Lấy thông tin money
     public Money getMoneyInfo() {
-        //Chưa validate!!
-        Money money = new Money();
+        //validate!!
+        if (!validateDate() || ! validateNameMoney()) {
+            return null;
+        }
         try {
+            Money money = new Money();
             if (idField.getText() != null && !"".equals(idField.getText())) {
                 money.setId(Integer.parseInt(idField.getText()));
             }
@@ -275,6 +275,13 @@ public class MoneyView extends JFrame implements ActionListener, ListSelectionLi
         }
         return true;
     }
+
+//    private boolean validateAmount () {
+//        int amount = Integer.parseInt(amountField.getText().trim());
+//        if (amount == Integer.parseInt(null)) {
+//
+//        }
+//    }
 
 
 

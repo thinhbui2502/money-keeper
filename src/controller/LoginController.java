@@ -23,12 +23,6 @@ public class LoginController {
         loginView.setVisible(true);
     }
 
-    /**
-     * Lớp LoginListener
-     * chứa cài đặt cho sự kiện click button "Login"
-     *
-     * @author viettuts.vn
-     */
     class LoginListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             User user = loginView.getUser();

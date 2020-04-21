@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="422dfdf2-5afd-43d5-80fc-c6b7ef7bd155" name="Default Changelist" comment="" />
+    <list default="true" id="422dfdf2-5afd-43d5-80fc-c6b7ef7bd155" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/money.xml" beforeDir="false" afterPath="$PROJECT_DIR$/money.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Money-Keeper/controller/MoneyController$ClearMoneyListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Money-Keeper/controller/MoneyController$ClearMoneyListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Money-Keeper/controller/MoneyController$DeleteStudentListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Money-Keeper/controller/MoneyController$DeleteStudentListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Money-Keeper/controller/MoneyController$EditMoneyListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Money-Keeper/controller/MoneyController$EditMoneyListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Money-Keeper/controller/MoneyController$ListMoneySelectionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Money-Keeper/controller/MoneyController$ListMoneySelectionListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Money-Keeper/controller/MoneyController$SortMoneyByValueListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Money-Keeper/controller/MoneyController$SortMoneyByValueListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Money-Keeper/view/MoneyView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Money-Keeper/view/MoneyView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/MoneyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/MoneyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/management/MoneyManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/management/MoneyManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/MoneyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MoneyView.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +29,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1alDHkGsQINkGHeIkSPCncy3Zp9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -22,6 +41,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../QLSV-CS-TEST" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -57,6 +77,7 @@
       <workItem from="1587371151802" duration="6685000" />
       <workItem from="1587391137367" duration="5519000" />
       <workItem from="1587432466250" duration="8386000" />
+      <workItem from="1587451288791" duration="10584000" />
     </task>
     <servers />
   </component>
@@ -68,34 +89,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1032" y="182" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1587301213260" />
-    <state x="1245" y="239" key="#com.intellij.ide.util.MemberChooser" timestamp="1587395950168">
+    <state x="1245" y="239" key="#com.intellij.ide.util.MemberChooser" timestamp="1587457185838">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1245" y="239" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1587395950168" />
+    <state x="1245" y="239" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1587457185838" />
     <state x="1002" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1587439960332">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1002" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587439960332" />
+    <state x="690" y="267" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1587451729393">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587451729393" />
     <state x="1220" y="278" key="FileChooserDialogImpl" timestamp="1587433268687">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1220" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587433268687" />
-    <state width="1877" height="279" key="GridCell.Tab.0.bottom" timestamp="1587451484908">
+    <state width="914" height="277" key="GridCell.Tab.0.bottom" timestamp="1587464344865">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587451484908" />
-    <state width="1877" height="279" key="GridCell.Tab.0.center" timestamp="1587451484907">
+    <state width="914" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587464344865" />
+    <state width="914" height="277" key="GridCell.Tab.0.center" timestamp="1587464344865">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587451484907" />
-    <state width="1877" height="279" key="GridCell.Tab.0.left" timestamp="1587451484907">
+    <state width="914" height="277" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587464344865" />
+    <state width="914" height="277" key="GridCell.Tab.0.left" timestamp="1587464344865">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587451484907" />
-    <state width="1877" height="279" key="GridCell.Tab.0.right" timestamp="1587451484907">
+    <state width="914" height="277" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587464344865" />
+    <state width="914" height="277" key="GridCell.Tab.0.right" timestamp="1587464344865">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587451484907" />
+    <state width="914" height="277" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587464344865" />
     <state x="922" y="166" key="SettingsEditor" timestamp="1587371138778">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

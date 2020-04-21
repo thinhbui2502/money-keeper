@@ -87,7 +87,10 @@ public class MoneyManagement {
         });
     }
 
-    //Sắp xếp danh sách theo từng khoản thu/chi (chua lam)
+    //Sắp xếp danh sách theo từng khoản thu/chi
+//    public void sortMoneyByItem() {
+//        Collections.sort(listMoney<Money>);
+//    }
 
     public List<Money> getListMoney() {
         return listMoney;

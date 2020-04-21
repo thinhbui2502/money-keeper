@@ -32,7 +32,7 @@ public class MoneyController {
         moneyView.showListMoney(moneyList);
     }
 
-        //cài đặt cho sự kiện click button "Add"
+    //cài đặt cho sự kiện click button "Add"
     class AddMoneyListener implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -45,6 +45,7 @@ public class MoneyController {
                 }
             }
         }
+
         //cài đặt cho sự kiện click button "Edit"
     class EditMoneyListener implements ActionListener {
             @Override
@@ -58,6 +59,7 @@ public class MoneyController {
                 }
             }
         }
+
 
         //cài đặt cho sự kiện click button "Delete"
     class DeleteStudentListener implements ActionListener {
@@ -89,7 +91,13 @@ public class MoneyController {
              }
          }
 
-    //cài đặt cho sự kiện click button "SortByItem (chưa làm đc)
+    //cài đặt cho sự kiện click button "SortByItem"
+//    class SortMoneyByItemLister implements ActionListener {
+//        @Override
+//        public void actionPerformed(ActionEvent e) {
+//            moneyManagement.s
+//        }
+//    }
 
     //Lớp ListMoneySelectionListener chứa cài đặt cho sự kiện chọn money trong bảng
     class ListMoneySelectionListener implements ListSelectionListener {
