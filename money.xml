@@ -1,38 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <money>
     <money>
-        <id>2</id>
-        <date>20/04</date>
-        <moneyName>Khoản chi</moneyName>
-        <amount>30000</amount>
-        <description>Ăn sáng</description>
+        <id>1</id>
+        <date>Thu Apr 23 </date>
+        <moneyName>Khoản thu</moneyName>
+        <amount>123000</amount>
+        <description>tesst</description>
     </money>
     <money>
-        <id>4</id>
-        <date>22/04</date>
+        <id>2</id>
+        <date>Thu Apr 23 </date>
         <moneyName>Khoản chi</moneyName>
-        <amount>75000</amount>
-        <description>Hóa đơn nước</description>
+        <amount>90000</amount>
+        <description>test 2</description>
     </money>
     <money>
         <id>3</id>
-        <date>21/04</date>
-        <moneyName>Khoản chi</moneyName>
-        <amount>40000</amount>
-        <description>Nhặt được</description>
-    </money>
-    <money>
-        <id>5</id>
-        <date>23/04</date>
+        <date>Thu Apr 30 </date>
         <moneyName>Khoản thu</moneyName>
-        <amount>500000</amount>
+        <amount>50000</amount>
         <description>Lãi NH</description>
     </money>
     <money>
-        <id>6</id>
-        <date>22/04</date>
-        <moneyName>Khoản thu</moneyName>
-        <amount>100000</amount>
-        <description>Đòi nợ từ Linh</description>
+        <id>4</id>
+        <date>Mon Apr 27 </date>
+        <moneyName>Khoản chi</moneyName>
+        <amount>30000</amount>
+        <description>ăn sáng</description>
     </money>
 </money>

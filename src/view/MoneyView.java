@@ -1,5 +1,6 @@
 package view;
 
+import Date.DateLabelFormatter;
 import entity.Money;
 
 import javax.swing.*;
@@ -9,9 +10,16 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.Format;
 import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.*;
 import java.util.List;
-import java.util.Locale;
+
+import org.jdatepicker.impl.JDatePanelImpl;
+import org.jdatepicker.impl.JDatePickerImpl;
+import org.jdatepicker.impl.UtilDateModel;
 
 public class MoneyView extends JFrame implements ActionListener, ListSelectionListener {
     private static final long serialVersionUID = 1L;
@@ -39,10 +47,15 @@ public class MoneyView extends JFrame implements ActionListener, ListSelectionLi
     private JTextField walletField;
 
     private JTextField idField;
-    private JTextField dateField;
     private JComboBox moneyNameComboBox;
     private JTextField amountField;
     private JTextArea descriptionTA;
+
+    //Khai báo để dùng JDatePicker
+    private UtilDateModel model;
+    private Properties properties;
+    private JDatePanelImpl datePanel;
+    private JDatePickerImpl datePicker;
 
 
     // định nghĩa các cột của bảng money
@@ -81,7 +94,6 @@ public class MoneyView extends JFrame implements ActionListener, ListSelectionLi
         // khởi tạo các trường nhập dữ liệu cho money
         idField = new JTextField(15);
         idField.setEditable(false);
-        dateField = new JTextField(15);
         Object[] items = {"Khoản thu", "Khoản chi"};
         moneyNameComboBox = new JComboBox(items);
         amountField = new JTextField(15);
@@ -97,6 +109,15 @@ public class MoneyView extends JFrame implements ActionListener, ListSelectionLi
         totalDownField.setEditable(false);
         walletField = new JTextField(15);
         walletField.setEditable(false);
+
+        //Dùng JDatePicker
+        model = new UtilDateModel();
+        properties = new Properties();
+        properties.put("text.today", "Today");
+        properties.put("text.month", "Month");
+        properties.put("text.year", "Year");
+        datePanel = new JDatePanelImpl(model, properties);
+        datePicker = new JDatePickerImpl(datePanel, new DateLabelFormatter());
 
         // cài đặt các cột và data cho bảng money
         moneyTable.setModel(new DefaultTableModel((Object[][]) data, columnNames));
@@ -131,8 +152,9 @@ public class MoneyView extends JFrame implements ActionListener, ListSelectionLi
         panel.add(walletLabel);
         panel.add(walletField);
 
+        panel.add(datePicker);
+
         panel.add(idField);
-        panel.add(dateField);
         panel.add(moneyNameComboBox);
         panel.add(amountField);
         panel.add(jScrollPaneDescription);
@@ -152,29 +174,30 @@ public class MoneyView extends JFrame implements ActionListener, ListSelectionLi
 
         layout.putConstraint(SpringLayout.WEST, totalUpLabel, 10, SpringLayout.WEST, panel);
         layout.putConstraint(SpringLayout.NORTH, totalUpLabel, 230, SpringLayout.NORTH, panel);
-        layout.putConstraint(SpringLayout.WEST, totalUpField, 100, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.WEST, totalUpField, 95, SpringLayout.WEST, panel);
         layout.putConstraint(SpringLayout.NORTH, totalUpField, 230, SpringLayout.NORTH, panel);
 
 
         layout.putConstraint(SpringLayout.WEST, totalDownLabel, 10, SpringLayout.WEST, panel);
         layout.putConstraint(SpringLayout.NORTH, totalDownLabel, 260, SpringLayout.NORTH, panel);
-        layout.putConstraint(SpringLayout.WEST, totalDownField, 100, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.WEST, totalDownField, 95, SpringLayout.WEST, panel);
         layout.putConstraint(SpringLayout.NORTH, totalDownField, 260, SpringLayout.NORTH, panel);
 
         layout.putConstraint(SpringLayout.WEST, walletLabel, 10, SpringLayout.WEST, panel);
         layout.putConstraint(SpringLayout.NORTH, walletLabel, 290, SpringLayout.NORTH, panel);
-        layout.putConstraint(SpringLayout.WEST, walletField, 100, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.WEST, walletField, 95, SpringLayout.WEST, panel);
         layout.putConstraint(SpringLayout.NORTH, walletField, 290, SpringLayout.NORTH, panel);
 
-        layout.putConstraint(SpringLayout.WEST, idField, 100, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.WEST, idField, 95, SpringLayout.WEST, panel);
         layout.putConstraint(SpringLayout.NORTH, idField, 10, SpringLayout.NORTH, panel);
-        layout.putConstraint(SpringLayout.WEST, dateField, 100, SpringLayout.WEST, panel);
-        layout.putConstraint(SpringLayout.NORTH, dateField, 40, SpringLayout.NORTH, panel);
-        layout.putConstraint(SpringLayout.WEST, moneyNameComboBox, 100, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.WEST, datePicker, 95, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.NORTH, datePicker, 40, SpringLayout.NORTH, panel);
+
+        layout.putConstraint(SpringLayout.WEST, moneyNameComboBox, 95, SpringLayout.WEST, panel);
         layout.putConstraint(SpringLayout.NORTH, moneyNameComboBox, 70, SpringLayout.NORTH, panel);
-        layout.putConstraint(SpringLayout.WEST, amountField, 100, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.WEST, amountField, 95, SpringLayout.WEST, panel);
         layout.putConstraint(SpringLayout.NORTH, amountField, 100, SpringLayout.NORTH, panel);
-        layout.putConstraint(SpringLayout.WEST, jScrollPaneDescription, 100, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.WEST, jScrollPaneDescription, 95, SpringLayout.WEST, panel);
         layout.putConstraint(SpringLayout.NORTH, jScrollPaneDescription, 130, SpringLayout.NORTH, panel);
 
         layout.putConstraint(SpringLayout.WEST, jScrollPaneMoneyTable, 300, SpringLayout.WEST, panel);
@@ -219,9 +242,10 @@ public class MoneyView extends JFrame implements ActionListener, ListSelectionLi
             money[i][1] = list.get(i).getDate();
             money[i][2] = list.get(i).getMoneyName();
             //Định dạng số sang  tiền tệ
-//            Locale locale = new Locale("vi","VN" );
-//            NumberFormat format = NumberFormat.getInstance(locale);
-            money[i][3] = list.get(i).getAmount();
+            Locale locale = new Locale("vi", "VN");
+            NumberFormat format = NumberFormat.getInstance(locale);
+            money[i][3] = format.format(list.get(i).getAmount());
+
             money[i][4] = list.get(i).getDescription();
         }
         moneyTable.setModel(new DefaultTableModel(money, columnNames));
@@ -232,11 +256,14 @@ public class MoneyView extends JFrame implements ActionListener, ListSelectionLi
         int size = list.size();
         int moneyUp = 0;
         int moneyDown = 0;
-        for (int i=0; i<size; i ++) {
-            if (moneyTable.getModel().getValueAt(i,2).equals("Khoản thu")) {
-                moneyUp += (int) moneyTable.getModel().getValueAt(i,3);
+        int temp;
+        for (int i = 0; i < size; i++) {
+            if (moneyTable.getModel().getValueAt(i, 2).equals("Khoản thu")) {
+                temp = Integer.parseInt(moneyTable.getModel().getValueAt(i, 3).toString().replace(".",""));
+                moneyUp += temp;
             } else {
-                moneyDown += (int) moneyTable.getModel().getValueAt(i,3);
+                temp = Integer.parseInt(moneyTable.getModel().getValueAt(i, 3).toString().replace(".",""));
+                moneyDown += temp;
             }
         }
         int wallet = moneyUp - moneyDown;
@@ -244,7 +271,7 @@ public class MoneyView extends JFrame implements ActionListener, ListSelectionLi
         Locale locale = new Locale("vi", "VN");
         NumberFormat format = NumberFormat.getInstance(locale);
         totalUpField.setText(format.format(moneyUp) + " đ");
-        totalDownField.setText(format.format(moneyDown) + " đ");
+        totalDownField.setText("- " + format.format(moneyDown) + " đ");
         walletField.setText(format.format(wallet) + " đ");
     }
 
@@ -254,8 +281,7 @@ public class MoneyView extends JFrame implements ActionListener, ListSelectionLi
         int row = moneyTable.getSelectedRow();
         if (row >= 0) {
             idField.setText(moneyTable.getModel().getValueAt(row, 0).toString());
-            dateField.setText(moneyTable.getModel().getValueAt(row, 1).toString());
-            amountField.setText(moneyTable.getModel().getValueAt(row, 3).toString());
+            amountField.setText(moneyTable.getModel().getValueAt(row, 3).toString().replace(".",""));
             descriptionTA.setText(moneyTable.getModel().getValueAt(row, 4).toString());
             // enable Edit and Delete buttons
             editButton.setEnabled(true);
@@ -268,7 +294,6 @@ public class MoneyView extends JFrame implements ActionListener, ListSelectionLi
     //Clear thong tin money
     public void clearMoneyInfo() {
         idField.setText("");
-        dateField.setText("");
         amountField.setText("");
         descriptionTA.setText("");
         // enable Edit and Delete buttons
@@ -281,7 +306,6 @@ public class MoneyView extends JFrame implements ActionListener, ListSelectionLi
     //hiển thị thông tin Money
     public void showMoney(Money money) {
         idField.setText("" + money.getId());
-        dateField.setText("" + money.getDate());
         amountField.setText("" + money.getAmount());
         descriptionTA.setText(money.getDescription());
         // enable Edit and Delete buttons
@@ -294,7 +318,7 @@ public class MoneyView extends JFrame implements ActionListener, ListSelectionLi
     //Lấy thông tin money
     public Money getMoneyInfo() {
         //validate!!
-        if (!validateDate() || !validateAmount()) {
+        if (!validateAmount()) {
             return null;
         }
         try {
@@ -302,7 +326,7 @@ public class MoneyView extends JFrame implements ActionListener, ListSelectionLi
             if (idField.getText() != null && !"".equals(idField.getText())) {
                 money.setId(Integer.parseInt(idField.getText()));
             }
-            money.setDate(dateField.getText().trim());
+            money.setDate(datePicker.getModel().getValue().toString().substring(0, 11));
             money.setMoneyName(moneyNameComboBox.getSelectedItem().toString());
             money.setAmount(Integer.parseInt(amountField.getText().trim()));
             money.setDescription(descriptionTA.getText().trim());
@@ -311,16 +335,6 @@ public class MoneyView extends JFrame implements ActionListener, ListSelectionLi
             showMessage(e.getMessage());
         }
         return null;
-    }
-
-    private boolean validateDate() {
-        String date = dateField.getText();
-        if (date == null || "".equals(date.trim())) {
-            dateField.requestFocus();
-            showMessage("Ngày không được để trống!");
-            return false;
-        }
-        return true;
     }
 
     private boolean validateAmount() {
