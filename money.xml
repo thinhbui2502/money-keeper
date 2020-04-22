@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <money>
     <money>
-        <id>3</id>
-        <date>123</date>
-        <moneyName>Chi</moneyName>
-        <amount>123</amount>
-        <description>dfwf</description>
-    </money>
-    <money>
-        <id>5</id>
-        <date>23</date>
-        <moneyName>Thu</moneyName>
-        <amount>10000</amount>
-        <description>12312</description>
-    </money>
-    <money>
-        <id>6</id>
+        <id>1</id>
         <date>21/04</date>
-        <moneyName>Thu</moneyName>
+        <moneyName>Khoản thu</moneyName>
         <amount>100000</amount>
-        <description>Đi ban</description>
+        <description>Bán đồ</description>
     </money>
     <money>
         <id>2</id>
-        <date>22/4</date>
-        <moneyName>Thu</moneyName>
-        <amount>2000000</amount>
-        <description>Doi no thue</description>
+        <date>20/04</date>
+        <moneyName>Khoản chi</moneyName>
+        <amount>30000</amount>
+        <description>Ăn sáng</description>
     </money>
     <money>
-        <id>2</id>
-        <date>22/4</date>
-        <moneyName>Thu</moneyName>
-        <amount>1000000</amount>
-        <description>Doi no thue</description>
+        <id>3</id>
+        <date>21/04</date>
+        <moneyName>Khoản thu</moneyName>
+        <amount>40000</amount>
+        <description>Nhặt được</description>
     </money>
     <money>
         <id>4</id>
-        <date>25/4</date>
-        <moneyName>Chi</moneyName>
-        <amount>1900000</amount>
-        <description>adasd</description>
+        <date>22/04</date>
+        <moneyName>Khoản chi</moneyName>
+        <amount>75000</amount>
+        <description>Hóa đơn nước</description>
+    </money>
+    <money>
+        <id>5</id>
+        <date>23/04</date>
+        <moneyName>Khoản thu</moneyName>
+        <amount>500000</amount>
+        <description>Trúng lô</description>
+    </money>
+    <money>
+        <id>6</id>
+        <date>24/04</date>
+        <moneyName>Khoản chi</moneyName>
+        <amount>400000</amount>
+        <description>Mua áo</description>
     </money>
 </money>

@@ -23,6 +23,7 @@ public class MoneyController {
         view.addDeleteButtonListener(new DeleteStudentListener());
         view.addClearButtonListener(new ClearMoneyListener());
         view.addSortMoneyByValueListener(new SortMoneyByValueListener());
+        view.addSortMoneyByItemListener(new SortMoneyByItemLister());
         view.addListMoneySelectionListener(new ListMoneySelectionListener());
     }
 
@@ -34,70 +35,72 @@ public class MoneyController {
 
     //cài đặt cho sự kiện click button "Add"
     class AddMoneyListener implements ActionListener {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Money money = moneyView.getMoneyInfo();
-                if (money != null) {
-                    moneyManagement.add(money);
-                    moneyView.showMoney(money);
-                    moneyView.showListMoney(moneyManagement.getListMoney());
-                    moneyView.showMessage("Thêm thành công!");
-                }
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            Money money = moneyView.getMoneyInfo();
+            if (money != null) {
+                moneyManagement.add(money);
+                moneyView.showMoney(money);
+                moneyView.showListMoney(moneyManagement.getListMoney());
+                moneyView.showMessage("Thêm thành công!");
             }
         }
+    }
 
-        //cài đặt cho sự kiện click button "Edit"
+    //cài đặt cho sự kiện click button "Edit"
     class EditMoneyListener implements ActionListener {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Money money = moneyView.getMoneyInfo();
-                if (money!= null) {
-                    moneyManagement.edit(money);
-                    moneyView.showMoney(money);
-                    moneyView.showListMoney(moneyManagement.getListMoney());
-                    moneyView.showMessage("Cập nhật thành công");
-                }
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            Money money = moneyView.getMoneyInfo();
+            if (money != null) {
+                moneyManagement.edit(money);
+                moneyView.showMoney(money);
+                moneyView.showListMoney(moneyManagement.getListMoney());
+                moneyView.showMessage("Cập nhật thành công");
             }
         }
+    }
 
 
-        //cài đặt cho sự kiện click button "Delete"
+    //cài đặt cho sự kiện click button "Delete"
     class DeleteStudentListener implements ActionListener {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Money money = moneyView.getMoneyInfo();
-                if (money != null) {
-                    moneyManagement.delete(money);
-                    moneyView.clearMoneyInfo();
-                    moneyView.showListMoney(moneyManagement.getListMoney());
-                    moneyView.showMessage("Xóa thành công!");
-                }
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            Money money = moneyView.getMoneyInfo();
+            if (money != null) {
+                moneyManagement.delete(money);
+                moneyView.clearMoneyInfo();
+                moneyView.showListMoney(moneyManagement.getListMoney());
+                moneyView.showMessage("Xóa thành công!");
             }
         }
-         //cài đặt cho sự kiện click button "Clear"
-    class ClearMoneyListener implements ActionListener {
-             @Override
-             public void actionPerformed(ActionEvent e) {
-                 moneyView.clearMoneyInfo();
-             }
-         }
+    }
 
-         //cài đặt cho sự kiện click button "SortByValue"
+    //cài đặt cho sự kiện click button "Clear"
+    class ClearMoneyListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            moneyView.clearMoneyInfo();
+        }
+    }
+
+    //cài đặt cho sự kiện click button "SortByValue"
     class SortMoneyByValueListener implements ActionListener {
-             @Override
-             public void actionPerformed(ActionEvent e) {
-                 moneyManagement.sortMoneyByValue();
-                 moneyView.showListMoney(moneyManagement.getListMoney());
-             }
-         }
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            moneyManagement.sortMoneyByValue();
+            moneyView.showListMoney(moneyManagement.getListMoney());
+        }
+    }
 
     //cài đặt cho sự kiện click button "SortByItem"
-//    class SortMoneyByItemLister implements ActionListener {
-//        @Override
-//        public void actionPerformed(ActionEvent e) {
-//            moneyManagement.s
-//        }
-//    }
+    class SortMoneyByItemLister implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            moneyManagement.sortMoneyByItem();
+            moneyView.showListMoney(moneyManagement.getListMoney());
+        }
+    }
 
     //Lớp ListMoneySelectionListener chứa cài đặt cho sự kiện chọn money trong bảng
     class ListMoneySelectionListener implements ListSelectionListener {
@@ -106,7 +109,6 @@ public class MoneyController {
             moneyView.fillMoneyFromSelectedRow();
         }
     }
-
 
 
 }

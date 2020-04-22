@@ -88,9 +88,17 @@ public class MoneyManagement {
     }
 
     //Sắp xếp danh sách theo từng khoản thu/chi
-//    public void sortMoneyByItem() {
-//        Collections.sort(listMoney<Money>);
-//    }
+    public void sortMoneyByItem() {
+        Collections.sort(listMoney, new Comparator<Money>() {
+            @Override
+            public int compare(Money money1, Money money2) {
+                if (money1.getMoneyName().equals(money2.getMoneyName())) {
+                    return (money1.getAmount() - money2.getAmount());
+                }
+                return (money1.getMoneyName().compareTo(money2.getMoneyName()));
+            }
+        });
+    }
 
     public List<Money> getListMoney() {
         return listMoney;
