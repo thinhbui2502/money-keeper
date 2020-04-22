@@ -75,7 +75,7 @@ public class MoneyView extends JFrame implements ActionListener, ListSelectionLi
         amountLabel = new JLabel("Số tiền");
         descriptionLabel = new JLabel("Mô tả");
         totalUpLabel = new JLabel("Tiền vào");
-        totalDownLabel=new JLabel("Tiền ra");
+        totalDownLabel = new JLabel("Tiền ra");
         walletLabel = new JLabel("Ví hiện tại");
 
         // khởi tạo các trường nhập dữ liệu cho money
@@ -227,6 +227,27 @@ public class MoneyView extends JFrame implements ActionListener, ListSelectionLi
         moneyTable.setModel(new DefaultTableModel(money, columnNames));
     }
 
+    //Hiện thị tổng tiền thu/chi lấy từ moneyTable
+    public void showTotalMoney(List<Money> list) {
+        int size = list.size();
+        int moneyUp = 0;
+        int moneyDown = 0;
+        for (int i=0; i<size; i ++) {
+            if (moneyTable.getModel().getValueAt(i,2).equals("Khoản thu")) {
+                moneyUp += (int) moneyTable.getModel().getValueAt(i,3);
+            } else {
+                moneyDown += (int) moneyTable.getModel().getValueAt(i,3);
+            }
+        }
+        int wallet = moneyUp - moneyDown;
+        //Định dạng sang tiền tệ
+        Locale locale = new Locale("vi", "VN");
+        NumberFormat format = NumberFormat.getInstance(locale);
+        totalUpField.setText(format.format(moneyUp) + " đ");
+        totalDownField.setText(format.format(moneyDown) + " đ");
+        walletField.setText(format.format(wallet) + " đ");
+    }
+
     //Điền thông tin của hàng được chọn từ bảng money vào các trường tương ứng
     public void fillMoneyFromSelectedRow() {
         //lấy chỉ số của hàng được chọn
@@ -244,7 +265,7 @@ public class MoneyView extends JFrame implements ActionListener, ListSelectionLi
         }
     }
 
-    //Xoa thong tin money
+    //Clear thong tin money
     public void clearMoneyInfo() {
         idField.setText("");
         dateField.setText("");
@@ -302,7 +323,7 @@ public class MoneyView extends JFrame implements ActionListener, ListSelectionLi
         return true;
     }
 
-    private boolean validateAmount () {
+    private boolean validateAmount() {
         try {
             int amount = Integer.parseInt(amountField.getText().trim());
             if (amount <= 0) {

@@ -1,25 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <money>
     <money>
-        <id>1</id>
-        <date>21/04</date>
-        <moneyName>Khoản thu</moneyName>
-        <amount>100000</amount>
-        <description>Bán đồ</description>
-    </money>
-    <money>
         <id>2</id>
         <date>20/04</date>
         <moneyName>Khoản chi</moneyName>
         <amount>30000</amount>
         <description>Ăn sáng</description>
-    </money>
-    <money>
-        <id>3</id>
-        <date>21/04</date>
-        <moneyName>Khoản thu</moneyName>
-        <amount>40000</amount>
-        <description>Nhặt được</description>
     </money>
     <money>
         <id>4</id>
@@ -29,17 +15,24 @@
         <description>Hóa đơn nước</description>
     </money>
     <money>
+        <id>3</id>
+        <date>21/04</date>
+        <moneyName>Khoản chi</moneyName>
+        <amount>40000</amount>
+        <description>Nhặt được</description>
+    </money>
+    <money>
         <id>5</id>
         <date>23/04</date>
         <moneyName>Khoản thu</moneyName>
         <amount>500000</amount>
-        <description>Trúng lô</description>
+        <description>Lãi NH</description>
     </money>
     <money>
         <id>6</id>
-        <date>24/04</date>
-        <moneyName>Khoản chi</moneyName>
-        <amount>400000</amount>
-        <description>Mua áo</description>
+        <date>22/04</date>
+        <moneyName>Khoản thu</moneyName>
+        <amount>100000</amount>
+        <description>Đòi nợ từ Linh</description>
     </money>
 </money>

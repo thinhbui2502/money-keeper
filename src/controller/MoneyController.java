@@ -31,6 +31,8 @@ public class MoneyController {
         List<Money> moneyList = moneyManagement.getListMoney();
         moneyView.setVisible(true);
         moneyView.showListMoney(moneyList);
+        //
+        moneyView.showTotalMoney(moneyList);
     }
 
     //cài đặt cho sự kiện click button "Add"
@@ -42,6 +44,7 @@ public class MoneyController {
                 moneyManagement.add(money);
                 moneyView.showMoney(money);
                 moneyView.showListMoney(moneyManagement.getListMoney());
+                moneyView.showTotalMoney(moneyManagement.getListMoney());
                 moneyView.showMessage("Thêm thành công!");
             }
         }
@@ -56,6 +59,7 @@ public class MoneyController {
                 moneyManagement.edit(money);
                 moneyView.showMoney(money);
                 moneyView.showListMoney(moneyManagement.getListMoney());
+                moneyView.showTotalMoney(moneyManagement.getListMoney());
                 moneyView.showMessage("Cập nhật thành công");
             }
         }
@@ -71,6 +75,7 @@ public class MoneyController {
                 moneyManagement.delete(money);
                 moneyView.clearMoneyInfo();
                 moneyView.showListMoney(moneyManagement.getListMoney());
+                moneyView.showTotalMoney(moneyManagement.getListMoney());
                 moneyView.showMessage("Xóa thành công!");
             }
         }
