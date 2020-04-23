@@ -3,9 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="422dfdf2-5afd-43d5-80fc-c6b7ef7bd155" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Money-Keeper.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Money-Keeper.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/money.xml" beforeDir="false" afterPath="$PROJECT_DIR$/money.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Money-Keeper/controller/LoginController$LoginListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Money-Keeper/controller/LoginController$LoginListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Money-Keeper/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Money-Keeper/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Money-Keeper/view/LoginView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Money-Keeper/view/LoginView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Money-Keeper/view/MoneyView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Money-Keeper/view/MoneyView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/FileUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/LoginView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/MoneyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MoneyView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +78,10 @@
       <workItem from="1587531931586" duration="178000" />
       <workItem from="1587539371682" duration="4199000" />
       <workItem from="1587543618493" duration="8371000" />
-      <workItem from="1587561939193" duration="5382000" />
+      <workItem from="1587561939193" duration="6691000" />
+      <workItem from="1587605312303" duration="11519000" />
+      <workItem from="1587623630666" duration="12058000" />
+      <workItem from="1587645789306" duration="347000" />
     </task>
     <servers />
   </component>
@@ -86,10 +93,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1032" y="182" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1587301213260" />
-    <state x="1245" y="239" key="#com.intellij.ide.util.MemberChooser" timestamp="1587518939550">
+    <state x="690" y="275" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1587625542796">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1245" y="239" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1587518939550" />
+    <state x="690" y="275" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587625542796" />
+    <state x="1245" y="239" key="#com.intellij.ide.util.MemberChooser" timestamp="1587630189271">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1245" y="239" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1587630189271" />
     <state x="1002" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1587439960332">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -102,37 +113,57 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1220" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587543802808" />
-    <state width="1877" height="274" key="GridCell.Tab.0.bottom" timestamp="1587567329062">
+    <state width="1877" height="187" key="GridCell.Tab.0.bottom" timestamp="1587635742649">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587567329062" />
-    <state width="1877" height="274" key="GridCell.Tab.0.center" timestamp="1587567329062">
+    <state width="1877" height="187" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587635742649" />
+    <state width="1877" height="187" key="GridCell.Tab.0.center" timestamp="1587635742649">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="274" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587567329062" />
-    <state width="1877" height="274" key="GridCell.Tab.0.left" timestamp="1587567329062">
+    <state width="1877" height="187" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587635742649" />
+    <state width="1877" height="187" key="GridCell.Tab.0.left" timestamp="1587635742649">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="274" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587567329062" />
-    <state width="1877" height="274" key="GridCell.Tab.0.right" timestamp="1587567329062">
+    <state width="1877" height="187" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587635742649" />
+    <state width="1877" height="187" key="GridCell.Tab.0.right" timestamp="1587635742649">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="274" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587567329062" />
+    <state width="1877" height="187" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587635742649" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1587635742647">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587635742647" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1587635742647">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587635742647" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1587635742646">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587635742646" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1587635742647">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587635742647" />
     <state x="880" y="166" key="SettingsEditor" timestamp="1587543814654">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="880" y="166" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587543814654" />
-    <state x="1135" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1587561937135">
+    <state x="1135" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1587645796463">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1135" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587561937135" />
-    <state x="685" y="144" key="new project wizard" timestamp="1587545010037">
+    <state x="1135" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587645796463" />
+    <state x="685" y="144" key="new project wizard" timestamp="1587607058218">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="685" y="144" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1587545010037" />
+    <state x="685" y="144" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1587607058218" />
     <state x="1146" y="152" key="refactoring.ChangeSignatureDialog" timestamp="1587562495797">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1146" y="152" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587562495797" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1587633535057">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1587633535057" />
   </component>
 </project>

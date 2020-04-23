@@ -10,7 +10,7 @@ public class FileUtils {
     //Chuyển đổi đối tượng object về định dạng XML
       //Sau đo lưu vào fileName
 
-    public static  void writeXMLToFile (String fileName, Object object) {
+    public static void writeXMLToFile (String fileName, Object object) {
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(object.getClass());
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();

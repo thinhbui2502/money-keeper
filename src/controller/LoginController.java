@@ -4,6 +4,7 @@ import entity.User;
 import management.UserManagement;
 import view.LoginView;
 import view.MoneyView;
+import view.RegisterView;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -17,10 +18,19 @@ public class LoginController {
         this.loginView = view;
         this.userManagement = new UserManagement();
         view.addLoginListener(new LoginListener());
+        view.addRegisterListener(new RegisterListener());
     }
 
     public void showLoginView() {
         loginView.setVisible(true);
+    }
+
+    class RegisterListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            new RegisterView();
+            loginView.setVisible(false);
+        }
     }
 
     class LoginListener implements ActionListener {
