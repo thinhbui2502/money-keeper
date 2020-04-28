@@ -107,30 +107,30 @@
     </money>
     <money>
         <id>16</id>
-        <date>Wed Apr 22 </date>
-        <moneyName>Khoản thu</moneyName>
-        <amount>500000</amount>
-        <description>Linh trả nốt</description>
-    </money>
-    <money>
-        <id>17</id>
-        <date>Thu Apr 23 </date>
-        <moneyName>Khoản thu</moneyName>
-        <amount>120000</amount>
-        <description>Bán đồ</description>
+        <date>Sat Apr 25 </date>
+        <moneyName>Khoản chi</moneyName>
+        <amount>1000000</amount>
+        <description>Linh trả nợ</description>
     </money>
     <money>
         <id>18</id>
         <date>Mon Apr 27 </date>
         <moneyName>Khoản chi</moneyName>
         <amount>8000000</amount>
-        <description>Thay lốp</description>
+        <description>Đổ xăng</description>
     </money>
     <money>
         <id>19</id>
-        <date>Tue Apr 28 </date>
+        <date>Mon Apr 27 </date>
+        <moneyName>Khoản chi</moneyName>
+        <amount>50000</amount>
+        <description>Đổ Xăng</description>
+    </money>
+    <money>
+        <id>19</id>
+        <date>Sat Apr 25 </date>
         <moneyName>Khoản thu</moneyName>
-        <amount>2000000</amount>
-        <description>Thu nợ</description>
+        <amount>100000</amount>
+        <description>mẹ cho</description>
     </money>
 </money>

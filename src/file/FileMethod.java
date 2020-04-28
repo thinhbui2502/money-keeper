@@ -1,4 +1,4 @@
-package utils;
+package file;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -6,10 +6,9 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
 
-public class FileUtils {
+public class FileMethod {
     //Chuyển đổi đối tượng object về định dạng XML
       //Sau đo lưu vào fileName
-
     public static void writeXMLToFile (String fileName, Object object) {
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(object.getClass());

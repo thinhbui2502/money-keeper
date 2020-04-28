@@ -2,8 +2,7 @@ package management;
 
 import entity.Money;
 import entity.MoneyXML;
-import sun.reflect.misc.FieldUtil;
-import utils.FileUtils;
+import file.FileMethod;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,13 +21,13 @@ public class MoneyManagement {
     public void writeListMoney(List<Money> money) {
         MoneyXML moneyXML = new MoneyXML();
         moneyXML.setMoney(money);
-        FileUtils.writeXMLToFile(MONEY_FILE_NAME, moneyXML);
+        FileMethod.writeXMLToFile(MONEY_FILE_NAME, moneyXML);
     }
 
     //Đọc đối tượng money từ file money.xml
     public List<Money> readListMoney() {
         List<Money> list = new ArrayList<Money>();
-        MoneyXML moneyXML = (MoneyXML) FileUtils.readXMLFile(MONEY_FILE_NAME, MoneyXML.class);
+        MoneyXML moneyXML = (MoneyXML) FileMethod.readXMLFile(MONEY_FILE_NAME, MoneyXML.class);
         if (moneyXML != null) {
             list = moneyXML.getMoney();
         }

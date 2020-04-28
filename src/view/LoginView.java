@@ -68,6 +68,7 @@ public class LoginView extends JFrame implements ActionListener {
         this.setTitle("Đăng nhập tài khoản");
         this.setSize(400, 300);
         this.setResizable(false);
+        this.setLocationRelativeTo(null);
     }
 
     public void addLoginListener(ActionListener listener) {

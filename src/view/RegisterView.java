@@ -1,7 +1,4 @@
 package view;
-
-import controller.LoginController;
-
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
@@ -9,6 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class RegisterView extends JFrame implements ActionListener {
+    LoginView loginView = new LoginView();
     private static final long serialVersionUID = 1L;
     private String[] gender = {"Nam", "Nữ"};
     private JLabel nameLabel = new JLabel("TÊN");
@@ -45,6 +43,7 @@ public class RegisterView extends JFrame implements ActionListener {
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
+        frame.setLocationRelativeTo(null);
 
         nameLabel.setBounds(20, 20, 40, 70);
         genderLabel.setBounds(20, 70, 80, 70);
@@ -89,12 +88,12 @@ public class RegisterView extends JFrame implements ActionListener {
         loginButton.addActionListener(this);
     }
 
-
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == registerButton) {
             if (passwordField.getText() != null && passwordField.getText().equalsIgnoreCase(confirmPasswordField.getText())) {
                 JOptionPane.showMessageDialog(null, "Đăng ký thành công");
+                new LoginView();
                 try {
                     FileWriter fileWriter = new FileWriter("account.txt");
                     fileWriter.write(accountField.getText());
@@ -119,6 +118,9 @@ public class RegisterView extends JFrame implements ActionListener {
         }
 
         if (e.getSource() == loginButton) {
+//            RegisterView registerView = new RegisterView();
+//            registerView.dispose();
+//            loginView.setVisible(true);
             System.exit(0);
         }
     }

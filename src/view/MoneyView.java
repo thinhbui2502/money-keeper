@@ -1,6 +1,6 @@
 package view;
 
-import Date.DateLabelFormatter;
+import date.DateLabelFormatter;
 import entity.Money;
 
 import javax.swing.*;
@@ -42,6 +42,9 @@ public class MoneyView extends JFrame implements ActionListener, ListSelectionLi
     private JTextField totalUpField;
     private JTextField totalDownField;
     private JTextField walletField;
+
+    private JLabel displayByLabel;
+    private JComboBox displayByComboBox;
 
     private JTextField idField;
     private JComboBox moneyNameComboBox;
@@ -87,12 +90,15 @@ public class MoneyView extends JFrame implements ActionListener, ListSelectionLi
         totalUpLabel = new JLabel("Tiền vào");
         totalDownLabel = new JLabel("Tiền ra");
         walletLabel = new JLabel("Ví hiện tại");
+        displayByLabel = new JLabel("Hiển thị theo: ");
 
         // khởi tạo các trường nhập dữ liệu cho money
         idField = new JTextField(15);
         idField.setEditable(false);
         Object[] items = {"Khoản thu", "Khoản chi"};
         moneyNameComboBox = new JComboBox(items);
+        Object[] itemsForDisplay = {" ", "Khoản thu", "Khoản chi"};
+        displayByComboBox = new JComboBox(itemsForDisplay);
         amountField = new JTextField(15);
         descriptionTA = new JTextArea();
         descriptionTA.setColumns(15);
@@ -119,7 +125,7 @@ public class MoneyView extends JFrame implements ActionListener, ListSelectionLi
         // cài đặt các cột và data cho bảng money
         moneyTable.setModel(new DefaultTableModel((Object[][]) data, columnNames));
         jScrollPaneMoneyTable.setViewportView(moneyTable);
-        jScrollPaneMoneyTable.setPreferredSize(new Dimension(480, 300));
+        jScrollPaneMoneyTable.setPreferredSize(new Dimension(480, 278));
 
         // tạo spring layout
         SpringLayout layout = new SpringLayout();
@@ -148,11 +154,13 @@ public class MoneyView extends JFrame implements ActionListener, ListSelectionLi
         panel.add(totalDownField);
         panel.add(walletLabel);
         panel.add(walletField);
+        panel.add(displayByLabel);
 
         panel.add(datePicker);
 
         panel.add(idField);
         panel.add(moneyNameComboBox);
+        panel.add(displayByComboBox);
         panel.add(amountField);
         panel.add(jScrollPaneDescription);
 
@@ -168,6 +176,8 @@ public class MoneyView extends JFrame implements ActionListener, ListSelectionLi
         layout.putConstraint(SpringLayout.NORTH, amountLabel, 100, SpringLayout.NORTH, panel);
         layout.putConstraint(SpringLayout.WEST, descriptionLabel, 10, SpringLayout.WEST, panel);
         layout.putConstraint(SpringLayout.NORTH, descriptionLabel, 130, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.WEST, displayByLabel, 600, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.NORTH, displayByLabel, 10, SpringLayout.NORTH, panel);
 
         layout.putConstraint(SpringLayout.WEST, totalUpLabel, 10, SpringLayout.WEST, panel);
         layout.putConstraint(SpringLayout.NORTH, totalUpLabel, 230, SpringLayout.NORTH, panel);
@@ -192,13 +202,15 @@ public class MoneyView extends JFrame implements ActionListener, ListSelectionLi
 
         layout.putConstraint(SpringLayout.WEST, moneyNameComboBox, 95, SpringLayout.WEST, panel);
         layout.putConstraint(SpringLayout.NORTH, moneyNameComboBox, 70, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.WEST, displayByComboBox, 680, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.NORTH, displayByComboBox, 6, SpringLayout.NORTH, panel);
         layout.putConstraint(SpringLayout.WEST, amountField, 95, SpringLayout.WEST, panel);
         layout.putConstraint(SpringLayout.NORTH, amountField, 100, SpringLayout.NORTH, panel);
         layout.putConstraint(SpringLayout.WEST, jScrollPaneDescription, 95, SpringLayout.WEST, panel);
         layout.putConstraint(SpringLayout.NORTH, jScrollPaneDescription, 130, SpringLayout.NORTH, panel);
 
         layout.putConstraint(SpringLayout.WEST, jScrollPaneMoneyTable, 300, SpringLayout.WEST, panel);
-        layout.putConstraint(SpringLayout.NORTH, jScrollPaneMoneyTable, 10, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.NORTH, jScrollPaneMoneyTable, 33, SpringLayout.NORTH, panel);
 
         layout.putConstraint(SpringLayout.WEST, addButton, 10, SpringLayout.WEST, panel);
         layout.putConstraint(SpringLayout.NORTH, addButton, 330, SpringLayout.NORTH, panel);
@@ -219,11 +231,14 @@ public class MoneyView extends JFrame implements ActionListener, ListSelectionLi
         this.pack();
         this.setTitle("Money Keeper");
         this.setSize(800, 420);
+        this.setLocationRelativeTo(null);
         // disable Edit and Delete buttons
         editButton.setEnabled(false);
         deleteButton.setEnabled(false);
         // enable Add button
         addButton.setEnabled(true);
+
+        moneyTable.setAutoCreateRowSorter(true);
     }
 
     public void showMessage(String message) {
@@ -256,10 +271,10 @@ public class MoneyView extends JFrame implements ActionListener, ListSelectionLi
         int temp;
         for (int i = 0; i < size; i++) {
             if (moneyTable.getModel().getValueAt(i, 2).equals("Khoản thu")) {
-                temp = Integer.parseInt(moneyTable.getModel().getValueAt(i, 3).toString().replace(".",""));
+                temp = Integer.parseInt(moneyTable.getModel().getValueAt(i, 3).toString().replace(".", ""));
                 moneyUp += temp;
             } else {
-                temp = Integer.parseInt(moneyTable.getModel().getValueAt(i, 3).toString().replace(".",""));
+                temp = Integer.parseInt(moneyTable.getModel().getValueAt(i, 3).toString().replace(".", ""));
                 moneyDown += temp;
             }
         }
@@ -278,7 +293,7 @@ public class MoneyView extends JFrame implements ActionListener, ListSelectionLi
         int row = moneyTable.getSelectedRow();
         if (row >= 0) {
             idField.setText(moneyTable.getModel().getValueAt(row, 0).toString());
-            amountField.setText(moneyTable.getModel().getValueAt(row, 3).toString().replace(".",""));
+            amountField.setText(moneyTable.getModel().getValueAt(row, 3).toString().replace(".", ""));
             descriptionTA.setText(moneyTable.getModel().getValueAt(row, 4).toString());
             // enable Edit and Delete buttons
             editButton.setEnabled(true);
@@ -314,7 +329,6 @@ public class MoneyView extends JFrame implements ActionListener, ListSelectionLi
 
     //Lấy thông tin money
     public Money getMoneyInfo() {
-        //validate!!
         if (!validateAmount()) {
             return null;
         }
@@ -334,6 +348,7 @@ public class MoneyView extends JFrame implements ActionListener, ListSelectionLi
         return null;
     }
 
+    //validate
     private boolean validateAmount() {
         try {
             int amount = Integer.parseInt(amountField.getText().trim());
@@ -348,7 +363,6 @@ public class MoneyView extends JFrame implements ActionListener, ListSelectionLi
         }
         return true;
     }
-
 
     @Override
     public void actionPerformed(ActionEvent e) {

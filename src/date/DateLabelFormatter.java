@@ -1,4 +1,4 @@
-package Date;
+package date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -23,5 +23,4 @@ public class DateLabelFormatter extends AbstractFormatter {
         }
         return "";
     }
-
 }

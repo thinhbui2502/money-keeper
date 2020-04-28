@@ -31,7 +31,6 @@ public class MoneyController {
         List<Money> moneyList = moneyManagement.getListMoney();
         moneyView.setVisible(true);
         moneyView.showListMoney(moneyList);
-        //
         moneyView.showTotalMoney(moneyList);
     }
 
@@ -64,7 +63,6 @@ public class MoneyController {
             }
         }
     }
-
 
     //cài đặt cho sự kiện click button "Delete"
     class DeleteStudentListener implements ActionListener {

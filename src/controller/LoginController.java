@@ -29,7 +29,7 @@ public class LoginController {
         @Override
         public void actionPerformed(ActionEvent e) {
             new RegisterView();
-            loginView.setVisible(false);
+            loginView.dispose();
         }
     }
 
@@ -37,7 +37,7 @@ public class LoginController {
         public void actionPerformed(ActionEvent e) {
             User user = loginView.getUser();
             if (userManagement.checkUser(user)) {
-                // nếu đăng nhập thành công, mở màn hình quản lý sinh viên
+                // nếu đăng nhập thành công, mở màn hình quản chính
                 moneyView = new MoneyView();
                 MoneyController moneyController = new MoneyController(moneyView);
                 moneyController.showMoneyView();
